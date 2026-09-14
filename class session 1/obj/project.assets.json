@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\Software-Engineering-CNPM-\\class session 1\\class session 1.csproj",
+      "projectUniqueName": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\class session 1\\class session 1.csproj",
       "projectName": "class session 1",
-      "projectPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\Software-Engineering-CNPM-\\class session 1\\class session 1.csproj",
+      "projectPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\class session 1\\class session 1.csproj",
       "packagesPath": "C:\\Users\\Fong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\Software-Engineering-CNPM-\\class session 1\\obj\\",
+      "outputPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\class session 1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
