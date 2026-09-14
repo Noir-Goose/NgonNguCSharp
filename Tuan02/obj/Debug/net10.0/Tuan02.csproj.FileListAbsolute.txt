@@ -1,0 +1,15 @@
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\bin\Debug\net10.0\Tuan02.exe
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\bin\Debug\net10.0\Tuan02.deps.json
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\bin\Debug\net10.0\Tuan02.runtimeconfig.json
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\bin\Debug\net10.0\Tuan02.dll
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\bin\Debug\net10.0\Tuan02.pdb
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.AssemblyInfoInputs.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.AssemblyInfo.cs
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.csproj.CoreCompileInputs.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.sourcelink.json
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.dll
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\refint\Tuan02.dll
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.pdb
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\Tuan02.genruntimeconfig.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\obj\Debug\net10.0\ref\Tuan02.dll
