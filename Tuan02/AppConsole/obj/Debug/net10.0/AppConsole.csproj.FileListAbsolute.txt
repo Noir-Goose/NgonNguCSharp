@@ -1,0 +1,5 @@
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\AppConsole\obj\Debug\net10.0\AppConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\AppConsole\obj\Debug\net10.0\AppConsole.AssemblyInfoInputs.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\AppConsole\obj\Debug\net10.0\AppConsole.AssemblyInfo.cs
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\AppConsole\obj\Debug\net10.0\AppConsole.csproj.CoreCompileInputs.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\Tuan02\AppConsole\obj\Debug\net10.0\AppConsole.sourcelink.json
