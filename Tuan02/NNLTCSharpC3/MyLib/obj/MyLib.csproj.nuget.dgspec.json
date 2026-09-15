@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\MathLib.Tests\\MathLib.Tests.csproj": {}
+    "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\NNLTCSharpC3\\MyLib\\MyLib.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\MathLib.Tests\\MathLib.Tests.csproj": {
+    "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\NNLTCSharpC3\\MyLib\\MyLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\MathLib.Tests\\MathLib.Tests.csproj",
-        "projectName": "MathLib.Tests",
-        "projectPath": "c:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\MathLib.Tests\\MathLib.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\NNLTCSharpC3\\MyLib\\MyLib.csproj",
+        "projectName": "MyLib",
+        "projectPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\NNLTCSharpC3\\MyLib\\MyLib.csproj",
         "packagesPath": "C:\\Users\\Fong\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\MathLib.Tests\\obj\\",
+        "outputPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\NNLTCSharpC3\\MyLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,24 +51,6 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "dependencies": {
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.14.1, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[6.0.4, )"
-            },
-            "xunit": {
-              "target": "Package",
-              "version": "[2.9.3, )"
-            },
-            "xunit.runner.visualstudio": {
-              "target": "Package",
-              "version": "[3.1.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
