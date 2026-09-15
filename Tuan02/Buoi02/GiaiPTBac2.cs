@@ -10,5 +10,6 @@ public class GiaiPTBac2
         int sn = LibBaiTap.GiaiPTBac2(1, -3, 2, ref x1, ref x2);
         Console.WriteLine($"sn = {sn}, x1 = {x1}, x2 = {x2}");
         return 0;
+    
     }
 }
