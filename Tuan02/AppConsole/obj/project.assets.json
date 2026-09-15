@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Buoi02Prj\\Buoi02Prj.csproj",
-      "projectName": "Buoi02Prj",
-      "projectPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Buoi02Prj\\Buoi02Prj.csproj",
+      "projectUniqueName": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\AppConsole\\AppConsole.csproj",
+      "projectName": "AppConsole",
+      "projectPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\AppConsole\\AppConsole.csproj",
       "packagesPath": "C:\\Users\\Fong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Buoi02Prj\\obj\\",
+      "outputPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\Tuan02\\AppConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
