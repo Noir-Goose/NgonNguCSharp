@@ -1,0 +1,15 @@
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\bin\Debug\net8.0\class session 1.exe
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\bin\Debug\net8.0\class session 1.deps.json
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\bin\Debug\net8.0\class session 1.runtimeconfig.json
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\bin\Debug\net8.0\class session 1.dll
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\bin\Debug\net8.0\class session 1.pdb
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.AssemblyInfoInputs.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.AssemblyInfo.cs
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.csproj.CoreCompileInputs.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.sourcelink.json
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.dll
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\refint\class session 1.dll
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.pdb
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\class session 1.genruntimeconfig.cache
+C:\Users\Fong\Documents\VScode\CSharp\NgonNguCSharp\class session 1\obj\Debug\net8.0\ref\class session 1.dll

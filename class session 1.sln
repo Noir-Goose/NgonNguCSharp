@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "class session 1", "class se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuan02", "Tuan02\Tuan02.csproj", "{1B5A0ECB-CB45-4AF9-90A6-2335B7680266}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tuan02", "Tuan02", "{6C3E7805-4E31-B51E-D61E-1CE12ABD4A0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Buoi02", "Buoi02", "{2C004CCA-904C-F52F-1DA4-BF3B76255C7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thuc Hanh 01 - Ngon ngu lap trinh CSharp", "Thuc Hanh 01 - Ngon ngu lap trinh CSharp", "{141E0F0F-4F8F-3C66-AF09-31417128D048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThucHanh01Tuan2", "Tuan02\Buoi02\Thuc Hanh 01 - Ngon ngu lap trinh CSharp\ThucHanh01Tuan2\ThucHanh01Tuan2.csproj", "{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,8 +49,25 @@ Global
 		{1B5A0ECB-CB45-4AF9-90A6-2335B7680266}.Release|x64.Build.0 = Release|Any CPU
 		{1B5A0ECB-CB45-4AF9-90A6-2335B7680266}.Release|x86.ActiveCfg = Release|Any CPU
 		{1B5A0ECB-CB45-4AF9-90A6-2335B7680266}.Release|x86.Build.0 = Release|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Debug|x64.Build.0 = Debug|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Debug|x86.Build.0 = Debug|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Release|x64.ActiveCfg = Release|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Release|x64.Build.0 = Release|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Release|x86.ActiveCfg = Release|Any CPU
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C004CCA-904C-F52F-1DA4-BF3B76255C7A} = {6C3E7805-4E31-B51E-D61E-1CE12ABD4A0A}
+		{141E0F0F-4F8F-3C66-AF09-31417128D048} = {2C004CCA-904C-F52F-1DA4-BF3B76255C7A}
+		{FB31499E-218F-4DFB-AA10-B3C4C9F81E70} = {141E0F0F-4F8F-3C66-AF09-31417128D048}
 	EndGlobalSection
 EndGlobal
