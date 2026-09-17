@@ -6,6 +6,6 @@
     <Nullable>enable</Nullable>
     
     <!-- Điền tên Class bạn muốn chạy vào đây (ví dụ: Bai03) -->
-    <StartupObject>ThucHanh01Tuan2.Bai14</StartupObject> 
+    <StartupObject>ThucHanh01Tuan2.Bai17</StartupObject> 
   </PropertyGroup>
 </Project>
