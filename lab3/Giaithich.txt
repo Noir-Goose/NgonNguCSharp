@@ -1,0 +1,69 @@
+GIẢI THÍCH CÁC BÀI LINQ - LAB 3
+
+Các file có phần mở rộng .linq được viết theo dạng chương trình C# để chạy trong LINQPad. Trong đó, Dump() dùng để hiển thị kết quả truy vấn thành bảng hoặc giá trị. Các phương thức Where, Select, OrderBy, GroupBy... là những toán tử LINQ để lọc, biến đổi, sắp xếp và nhóm dữ liệu.
+
+1. Bai2.1.linq - Lọc và biến đổi mảng số
+
+Chương trình tạo mảng số nguyên rồi lần lượt gọi CauA, CauB và CauC.
+
+- Câu a: Duyệt từng phần tử bằng foreach. Điều kiện x % 4 == 0 && x % 3 == 0 yêu cầu số đó đồng thời chia hết cho 4 và 3. Với dữ liệu mẫu, kết quả là 12, 24 và 0.
+- Câu b: Duyệt mảng và chỉ in các số nhỏ hơn hoặc bằng 3. Với dữ liệu mẫu, kết quả là 3 và 0.
+- Câu c: Tạo mảng mới có cùng độ dài. Nếu phần tử ở vị trí i là số chẵn thì đưa một nửa giá trị vào vị trí tương ứng; nếu là số lẻ thì giữ nguyên. Hàm trả về mảng mới để Main in ra. Cách làm này không thay đổi mảng ban đầu.
+
+2. Bai2.2.linq - Truy vấn mảng chuỗi
+
+Mảng mangChuoi chứa các từ được lấy từ câu thơ. Mỗi hàm thực hiện một yêu cầu riêng:
+
+- Câu a: Where(s => s.Length == 4) lọc các từ có độ dài 4 ký tự. OrderBy(s => s[0]) sắp xếp kết quả theo ký tự đầu tiên. Thứ tự này dựa trên giá trị ký tự trong C#, không phải quy tắc xếp vần tiếng Việt.
+- Câu b: Select tạo chuỗi mới cho mỗi từ theo dạng "chữ thường - CHỮ HOA" bằng ToLower() và ToUpper(). Vòng foreach in từng chuỗi đã chuyển đổi.
+- Câu c: Where(s => s.Contains('u')) giữ lại từ có chứa đúng ký tự u thường. Đây là phép tìm kiếm phân biệt hoa thường; ký tự có dấu như ú không được xem là u.
+- Câu d: Điều kiện kiểm tra chuỗi không rỗng trước, sau đó dùng char.IsUpper(s[0]) để giữ các từ có ký tự đầu viết hoa. Những từ lặp lại trong mảng vẫn xuất hiện lặp lại trong kết quả.
+
+3. Bai3.1.linq - Thống kê và nhóm số
+
+Chương trình làm việc với mảng số nguyên có cả giá trị trùng lặp.
+
+- Câu a: a.Length lấy tổng số phần tử. Count(x => x % 2 == 0) đếm số chẵn, còn Count(x => x % 2 != 0) đếm số lẻ. Với dữ liệu mẫu có 11 phần tử: 6 số chẵn và 5 số lẻ.
+- Câu b: Sum() tính tổng, Max() tìm giá trị lớn nhất và Min() tìm giá trị nhỏ nhất. Với mảng đã cho, tổng là 305, lớn nhất là 85 và nhỏ nhất là 1.
+- Câu c: Distinct() loại các giá trị trùng nhau; Count() đếm số giá trị còn lại. Mảng có 8 giá trị phân biệt.
+- Câu d: GroupBy(x => x % 5) gom các số theo số dư khi chia cho 5. OrderBy(nhom => nhom.Key) sắp xếp các nhóm theo số dư tăng dần. Key là số dư của nhóm; các phần tử trong nhóm vẫn theo thứ tự xuất hiện trong mảng ban đầu.
+
+4. Bai3.2.linq - Thống kê danh sách món ăn
+
+Mảng monAn chứa tên các món. Thuộc tính Length được dùng để tính số ký tự của cả tên, bao gồm dấu cách.
+
+- Câu a: Min(s => s.Length) và Max(s => s.Length) tìm độ dài nhỏ nhất và lớn nhất. Hai lần Where tiếp theo lấy tất cả tên món có độ dài tương ứng, nên nếu có nhiều món đồng hạng thì đều được in.
+- Câu b: GroupBy(s => s.Split(' ')[0]) lấy từ đầu tiên của mỗi tên làm khóa nhóm. Ví dụ các món bắt đầu bằng "Bún" được xếp cùng nhóm. Mỗi nhóm được in cùng các tên món thuộc nhóm đó.
+- Câu c: Count kiểm tra từ đầu tiên có bằng chính xác "Bánh" hay không và đếm số món thỏa điều kiện. Với dữ liệu mẫu có 3 món bắt đầu bằng "Bánh".
+
+5. Bai4.1 & 5.1 & 5.2.linq - Truy vấn và thống kê môn học
+
+Lớp MonHoc mô tả một môn bằng mã môn, tên môn, hệ đào tạo và số tiết. DuLieu.DS_Mon() tạo danh sách dữ liệu mẫu. Mỗi câu truy vấn lấy dữ liệu từ danh sách này:
+
+- Câu a: Where lọc môn có TenMon bắt đầu bằng "Lập trình"; Select chỉ lấy lại tên môn, không lấy toàn bộ đối tượng.
+- Câu b: Lọc các môn có He bằng "CD". OrderByDescending sắp xếp số tiết giảm dần; ThenBy sắp xếp tiếp theo mã môn tăng dần khi số tiết bằng nhau.
+- Câu c: Contains tìm "web" trong tên môn với StringComparison.OrdinalIgnoreCase nên không phân biệt chữ hoa và chữ thường. Select tạo đối tượng ẩn danh chỉ gồm TenMon và He.
+- Câu d: Lọc các môn hệ "KTV", sau đó OrderBy sắp xếp mã môn tăng dần.
+- Câu e: GroupBy gom môn theo SoTiet. Mỗi nhóm được biểu diễn bằng số tiết (Key) và số môn trong nhóm (Count); OrderByDescending xếp nhóm có số tiết cao trước.
+- Câu f: Max tìm số tiết lớn nhất trong danh sách. Where lấy tất cả môn có số tiết bằng giá trị lớn nhất đó, vì vậy có thể trả về nhiều môn nếu đồng hạng.
+- Câu g: GroupBy gom theo He. Select tính cho từng hệ số môn, tổng số tiết, số tiết cao nhất và thấp nhất. Hệ rỗng trong dữ liệu cũng tạo thành một nhóm riêng.
+- Câu h: GroupBy gom toàn bộ đối tượng môn học theo hệ; Select tạo kết quả gồm mã hệ và danh sách môn của hệ đó.
+- Câu i: GroupBy gom theo số tiết, OrderBy sắp xếp số tiết tăng dần, rồi trả về từng nhóm cùng danh sách các môn trong nhóm.
+- Câu j: Trước tiên chỉ giữ hệ KTV. Split('_')[0] lấy phần trước dấu gạch dưới trong mã môn làm khóa học phần, ví dụ HP2_1 thành HP2. Các nhóm được sắp theo mã học phần và môn trong nhóm được sắp theo MaMon.
+- Câu k: Where lọc môn có hơn 40 tiết trước khi GroupBy theo hệ. Trong mỗi hệ, OrderBy sắp xếp mã môn tăng dần. Do lọc trước khi nhóm, môn từ 40 tiết trở xuống không có trong kết quả.
+
+6. Bai 6.1 & 6.2.linq - Join và truy vấn kết hợp hệ, môn
+
+File khai báo lớp MonHoc và danh sách môn như bài trước, đồng thời khai báo lớp He cùng DuLieu.DS_He() để tạo danh sách hệ. Phần Main kết hợp hai danh sách theo MaHe và He:
+
+- Câu a: Join là inner join. Chỉ các môn có He khớp với MaHe của một hệ mới xuất hiện; kết quả chọn tên hệ, mã môn và tên môn.
+- Câu b: GroupJoin gom các môn phù hợp vào từng hệ. SelectMany cùng DefaultIfEmpty biến kết quả thành left outer join để vẫn giữ hệ chưa có môn. Where(mon == null) chỉ lấy các hệ không có môn tương ứng.
+- Câu c: heVaMon là left join từ danh sách hệ sang danh sách môn, nên giữ cả hệ không có môn. monKhongCoHe tìm các môn mà mã hệ không xuất hiện trong danh sách hệ. Concat ghép hai phần để có cả dòng khớp lẫn các trường hợp không khớp ở hai phía.
+- Câu d: heChuaCoMon tìm các hệ không có môn bằng Any. Sau đó Concat với monKhongCoHe để chỉ liệt kê các trường hợp không khớp: hệ chưa có môn và môn chưa có hệ tương ứng.
+- Câu e: Left join bắt đầu từ danh sách môn để không làm mất môn chưa khai báo hệ. Tên hệ được thay bằng "Chưa khai báo hệ" nếu không tìm thấy. OrderByDescending sắp số tiết giảm dần, MaMon là tiêu chí phụ tăng dần; Take(5) lấy 5 dòng đầu.
+- Câu f: GroupJoin tạo nhóm môn cho từng hệ. Count() đếm số môn trong nhóm; vì truy vấn bắt đầu từ danh sách hệ nên hệ không có môn vẫn hiện với số lượng 0.
+- Câu g: Select lấy SoTiet, Distinct loại các số tiết trùng nhau, rồi Count đếm số mức số tiết khác nhau. Giá trị 0 của môn XYZ cũng được tính vì nó có trong dữ liệu.
+- Câu h: FirstOrDefault(predicate) trả về môn đầu tiên theo thứ tự danh sách có tên bắt đầu bằng "Lập trình". Nếu không có môn phù hợp, kết quả là null.
+- Câu i: GroupJoin tạo một nhóm môn cho từng hệ. Bên trong mỗi nhóm, OrderBy sắp theo mã môn; Select((mon, index) => ...) đánh số từ 1 bằng index + 1. ToList() lưu các kết quả đã đánh số thành danh sách để hiển thị.
+
+Các truy vấn dùng Dump("...") để LINQPad hiển thị kết quả kèm tiêu đề. Những biểu thức Where/Select/OrderBy/GroupBy thường tạo truy vấn từ danh sách; dữ liệu kết quả được duyệt khi hiển thị hoặc khi gọi các phép tính như Count, Max, Min.
