@@ -1,0 +1,52 @@
+CREATE DATABASE QLCuaHang;
+GO
+USE QLCuaHang;
+GO
+
+-- 1. Bảng Sản phẩm (MaSP tự động tăng)
+CREATE TABLE SANPHAM (
+    MaSP INT IDENTITY(1,1) PRIMARY KEY,
+    TenSP NVARCHAR(100) NOT NULL,
+    DonGia DECIMAL(18,2) NOT NULL
+);
+
+CREATE DATABASE QLCuaHang;
+GO
+USE QLCuaHang;
+GO
+
+-- 1. Bảng Sản phẩm
+CREATE TABLE SANPHAM (
+    MaSP INT IDENTITY(1,1) PRIMARY KEY,
+    TenSP NVARCHAR(100) NOT NULL,
+    DonGia DECIMAL(18,2) NOT NULL
+);
+
+-- 2. Bảng Tồn kho theo ngày
+CREATE TABLE TONKHO (
+    Ngay DATE,
+    MaSP INT,
+    SLTon INT DEFAULT 0,
+    TongSLNhap INT DEFAULT 0,
+    TongSLBan INT DEFAULT 0,
+    PRIMARY KEY (Ngay, MaSP),
+    FOREIGN KEY (MaSP) REFERENCES SANPHAM(MaSP)
+);
+
+
+-- 3. Bảng Hóa đơn (MaHD tự động tăng)
+CREATE TABLE HOADON (
+    MaHD INT IDENTITY(1,1) PRIMARY KEY,
+    NgayTao DATE DEFAULT GETDATE(),
+    TinhTrang INT DEFAULT 0 -- 0: Chưa thanh toán, 1: Đã thanh toán
+);
+
+-- 4. Bảng Chi tiết hóa đơn
+CREATE TABLE CHITIETHOADON (
+    MaHD INT,
+    MaSP INT,
+    SoLuong INT,
+    PRIMARY KEY (MaHD, MaSP),
+    FOREIGN KEY (MaHD) REFERENCES HOADON(MaHD),
+    FOREIGN KEY (MaSP) REFERENCES SANPHAM(MaSP)
+);

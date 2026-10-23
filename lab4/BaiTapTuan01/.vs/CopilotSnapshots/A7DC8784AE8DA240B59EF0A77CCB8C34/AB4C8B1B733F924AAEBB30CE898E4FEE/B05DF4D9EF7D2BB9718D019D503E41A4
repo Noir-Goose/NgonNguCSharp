@@ -1,0 +1,443 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BaiTapTuan01
+{
+    public partial class Form8 : Form
+    {
+        private IntegerArrayManager _arrayManager;
+
+        public Form8()
+        {
+            InitializeComponent();
+            _arrayManager = new IntegerArrayManager();
+            InitializeUI();
+        }
+
+        private void InitializeUI()
+        {
+            // Set form close button behavior to show confirmation dialog
+            this.FormClosing += Form8_FormClosing;
+        }
+
+        private void Form8_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Show confirmation dialog before closing
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to close this form?",
+                "Confirm Close",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            // Cancel close if user clicks No
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        /// <summary>
+        /// Parses comma-separated input to integers
+        /// </summary>
+        private bool TryParseArray(string input, out int[] result)
+        {
+            result = Array.Empty<int>();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                MessageBox.Show("Please enter array values separated by commas.",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            try
+            {
+                result = input.Split(',')
+                    .Select(s => s.Trim())
+                    .Where(s => !string.IsNullOrEmpty(s))
+                    .Select(int.Parse)
+                    .ToArray();
+
+                if (result.Length == 0)
+                {
+                    MessageBox.Show("Please enter at least one integer value.",
+                        "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid input. Please enter integers separated by commas.\nExample: 1, 2, 3, 4, 5",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Updates the display with current array content
+        /// </summary>
+        private void UpdateDisplay()
+        {
+            try
+            {
+                if (_arrayManager.Count == 0)
+                {
+                    // messagebox or label showing empty
+                    return;
+                }
+
+                // Display current array (implementation depends on your UI controls)
+                // Example: textBox_Display.Text = _arrayManager.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating display: {ex.Message}",
+                    "Display Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #region Event Handlers
+
+        private void btnLoadArray_Click(object sender, EventArgs e)
+        {
+            InitializeArray(GetTextBoxInputText());
+        }
+
+        private string GetTextBoxInputText()
+        {
+            var ctrl = this.Controls.Find("textBoxInput", true).FirstOrDefault() as TextBox;
+            if (ctrl != null)
+                return ctrl.Text;
+
+            MessageBox.Show("Input textbox 'textBoxInput' not found. Ensure control exists in Designer.",
+                "Control Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return string.Empty;
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            SortAscending();
+        }
+
+        private void btnSortDesc_Click(object sender, EventArgs e)
+        {
+            SortDescending();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBoxSearch.Text, out int searchValue))
+            {
+                SearchValue(searchValue);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid integer to search.",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            DisplayStatistics();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBoxIndex.Text, out int index) && 
+                int.TryParse(textBoxInsertValue.Text, out int value))
+            {
+                InsertValue(index, value);
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid integers for index and value.",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBoxRemoveIndex.Text, out int index))
+            {
+                RemoveValue(index);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid integer index.",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBoxOldValue.Text, out int oldValue) && 
+                int.TryParse(textBoxNewValue.Text, out int newValue))
+            {
+                ReplaceValue(oldValue, newValue);
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid integers for old and new values.",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnReplaceAtIndex_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBoxReplaceIndex.Text, out int index) && 
+                int.TryParse(textBoxReplaceNewValue.Text, out int newValue))
+            {
+                ReplaceAtIndex(index, newValue);
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid integers for index and new value.",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearArray();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            // Implement handler as needed for your specific UI
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            // Implement handler as needed for your specific UI
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            // Implement handler as needed for your specific UI
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            // Implement handler as needed for your specific UI
+        }
+
+        #endregion
+
+        #region Public Methods for Array Operations
+
+        /// <summary>
+        /// Initializes array from input
+        /// </summary>
+        public void InitializeArray(string input)
+        {
+            if (TryParseArray(input, out int[] values))
+            {
+                _arrayManager.Initialize(values);
+                UpdateDisplay();
+                MessageBox.Show($"Array initialized with {_arrayManager.Count} elements.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        /// <summary>
+        /// Sorts array in ascending order
+        /// </summary>
+        public void SortAscending()
+        {
+            try
+            {
+                _arrayManager.SortAscending();
+                UpdateDisplay();
+                MessageBox.Show("Array sorted in ascending order.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Sorts array in descending order
+        /// </summary>
+        public void SortDescending()
+        {
+            try
+            {
+                _arrayManager.SortDescending();
+                UpdateDisplay();
+                MessageBox.Show("Array sorted in descending order.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Searches for a value in the array
+        /// </summary>
+        public void SearchValue(int value)
+        {
+            try
+            {
+                List<int> indices = _arrayManager.SearchValue(value);
+                if (indices.Count == 0)
+                {
+                    MessageBox.Show($"Value {value} not found in the array.",
+                        "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string positions = string.Join(", ", indices);
+                    MessageBox.Show($"Value {value} found at position(s): {positions}",
+                        "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Inserts a value at specified position
+        /// </summary>
+        public void InsertValue(int index, int value)
+        {
+            try
+            {
+                _arrayManager.InsertAt(index, value);
+                UpdateDisplay();
+                MessageBox.Show($"Value {value} inserted at position {index}.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Invalid Index", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Removes element at specified index
+        /// </summary>
+        public void RemoveValue(int index)
+        {
+            try
+            {
+                _arrayManager.RemoveAt(index);
+                UpdateDisplay();
+                MessageBox.Show($"Element at position {index} removed.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Invalid Index", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Displays array statistics
+        /// </summary>
+        public void DisplayStatistics()
+        {
+            try
+            {
+                if (_arrayManager.Count == 0)
+                {
+                    MessageBox.Show("Array is empty. Cannot calculate statistics.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string statistics = $"Array: {_arrayManager.ToString()}\n\n" +
+                    $"Count: {_arrayManager.Count}\n" +
+                    $"Sum: {_arrayManager.GetSum()}\n" +
+                    $"Even Sum: {_arrayManager.GetEvenSum()}\n" +
+                    $"Odd Sum: {_arrayManager.GetOddSum()}\n" +
+                    $"Max Value: {_arrayManager.GetMaxValue()}\n" +
+                    $"Min Value: {_arrayManager.GetMinValue()}";
+
+                MessageBox.Show(statistics, "Array Statistics", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Replaces all occurrences of a value
+        /// </summary>
+        public void ReplaceValue(int oldValue, int newValue)
+        {
+            try
+            {
+                int count = _arrayManager.ReplaceValue(oldValue, newValue);
+                if (count == 0)
+                {
+                    MessageBox.Show($"Value {oldValue} not found in the array.",
+                        "Replace Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    UpdateDisplay();
+                    MessageBox.Show($"Replaced {count} occurrence(s) of {oldValue} with {newValue}.",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Replaces value at specific index
+        /// </summary>
+        public void ReplaceAtIndex(int index, int newValue)
+        {
+            try
+            {
+                _arrayManager.ReplaceAtIndex(index, newValue);
+                UpdateDisplay();
+                MessageBox.Show($"Value at position {index} replaced with {newValue}.",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Invalid Index", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Clears the array
+        /// </summary>
+        public void ClearArray()
+        {
+            _arrayManager.Clear();
+            UpdateDisplay();
+            MessageBox.Show("Array cleared.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
+    }
+}
