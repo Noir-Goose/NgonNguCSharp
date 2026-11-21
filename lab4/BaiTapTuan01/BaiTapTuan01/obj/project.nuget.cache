@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9TtUJjTEYds=",
+  "dgSpecHash": "aP/j6LD3+dc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fong\\Documents\\VS Codetim\\WinformHoc\\BaiTapTuan01\\BaiTapTuan01\\BaiTapTuan01.csproj",
+  "projectFilePath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\lab4\\BaiTapTuan01\\BaiTapTuan01\\BaiTapTuan01.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Fong\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.31\\microsoft.windowsdesktop.app.ref.8.0.31.nupkg.sha512",
     "C:\\Users\\Fong\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.31\\microsoft.netcore.app.ref.8.0.31.nupkg.sha512",
+    "C:\\Users\\Fong\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.31\\microsoft.windowsdesktop.app.ref.8.0.31.nupkg.sha512",
     "C:\\Users\\Fong\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.31\\microsoft.aspnetcore.app.ref.8.0.31.nupkg.sha512",
     "C:\\Users\\Fong\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.31\\microsoft.netcore.app.host.win-x64.8.0.31.nupkg.sha512"
   ],

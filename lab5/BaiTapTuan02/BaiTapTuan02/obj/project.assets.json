@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fong\\Documents\\VS Codetim\\WinformHoc\\BaiTapTuan02\\BaiTapTuan02\\BaiTapTuan02.csproj",
+      "projectUniqueName": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\lab5\\BaiTapTuan02\\BaiTapTuan02\\BaiTapTuan02.csproj",
       "projectName": "BaiTapTuan02",
-      "projectPath": "C:\\Users\\Fong\\Documents\\VS Codetim\\WinformHoc\\BaiTapTuan02\\BaiTapTuan02\\BaiTapTuan02.csproj",
+      "projectPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\lab5\\BaiTapTuan02\\BaiTapTuan02\\BaiTapTuan02.csproj",
       "packagesPath": "C:\\Users\\Fong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fong\\Documents\\VS Codetim\\WinformHoc\\BaiTapTuan02\\BaiTapTuan02\\obj\\",
+      "outputPath": "C:\\Users\\Fong\\Documents\\VScode\\CSharp\\NgonNguCSharp\\lab5\\BaiTapTuan02\\BaiTapTuan02\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
